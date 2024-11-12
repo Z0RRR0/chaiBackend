@@ -3,8 +3,6 @@ const express = require('express')
 
 const app = express()
 
-const port = 4000
-
 const githubData = {
     "login": "ZorRro",
     "id": 9948372,
@@ -61,6 +59,7 @@ app.get('/github', (req, res) => {
     res.json(githubData)
 })
 
-app.listen(process.env.PORT, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Example app listening on port ${process.env.PORT}`)
 })
+
